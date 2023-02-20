@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <!-- Prompt user to register a new code that all users will use to log in-->
+    <title> Register </title>
+
+    <body>
+        <h2>DJs, create a code for your listeners to login and begin voting.</h2>
+            <form action="/register" method="post">
+                <div class="mb-3">
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="code" name="code" placeholder="Enter random code." type="text">
+                </div>
+                <button type="submit">Register</button>
+            </form>
+    </body>
+{% endblock %}
+

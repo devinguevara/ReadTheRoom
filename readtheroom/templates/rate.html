@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function ()
+        {
+            // Call display function if element "button" is clicked
+            let button = document.getElementById("button")
+            button.addEventListener("click", display);
+            let row = 1;
+
+            // Declare variables (input values) that will be displayed in table
+            function display() {
+                let user = document.getElementById("user").value;
+                let feedback = document.getElementById("feedback").value;
+
+            // Ensure that user identification and comment are both entered
+                if (!user || !feedback) {
+                    alert("Make sure to fill in both fields!");
+                    return;
+                }
+
+            // Declare a variable for the item to be displayed (table with ID: "comments")
+                let comments = document.getElementById("comments");
+
+            // Insert new row into table
+                let newRow = comments.insertRow(row);
+
+                let cell1 = newRow.insertCell(0);
+                let cell2 = newRow.insertCell(1);
+
+            // Cell 1 will correspond to information input into field "user" and cell 2 will correspond to
+            // information input into field "feedback". These lines of code return content from the HTML page.
+                cell1.innerHTML = user;
+                cell2.innerHTML = feedback;
+
+            // Add row in table for each new comment added
+                row++;
+            }
+        })
+    </script>
+
+    <h2>Rate the DJ</h2>
+    <h3>Leave a comment below to let your DJ know how you feel about the music they are playing and take a peek at what other listeners are thinking!</h3>
+<!-- Prompt user for feedback-->
+    <div id="container">
+
+        <div class="form-floating mb-3">
+            <input class="form-control" id="user" name="User" type="text">
+            <label for="user">Your Name</label>
+        </div>
+
+        <div class="form-floating">
+            <input class="form-control" id="feedback" name="Feedback"  type="text">
+            <label for="feedback">Comment</label>
+        </div>
+        <br>
+            <button id="button">Post Comment</button>
+    </div>
+
+<!-- Record and display feedbackk-->
+    <table class="table table-striped" id="comments">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Feedback</th>
+            </tr>
+        </thead>
+    </table>
+{% endblock %}

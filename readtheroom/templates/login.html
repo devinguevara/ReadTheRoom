@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<!-- Prompt user for existing user code -->
+<h2>Users, login using the code created by your DJ.</h2>
+    <form action="/login" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="code" name="code" placeholder="Enter code" type="text">
+        </div>
+        <button type="submit">Log In</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,168 @@
+/*Personalizing Bootstrap navigation bar and logo*/
+.nav-link {
+    color: #F2E85E !important;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 500;
+    font-size: 23px;
+    text-shadow: 0 0 3px #F23838;
+}
+
+
+h1 {
+    font-family: "Chakra Petch", sans-serif;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 0 3px orange;
+}
+
+
+/*General text*/
+/*Fonts imported from Google Fonts. Source link found in layout.html head*/
+body {
+    background-image: radial-gradient(circle, #D6D4FB, #D5D9FC, #BABFF6, #C4C8FF, #B5C0F8);
+}
+
+
+h2 {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: bold;
+    padding-right: 150px;
+    padding-left: 150px;
+}
+
+
+h3, h5 {
+    font-family: "Chakra Petch", sans-serif;
+    padding-right: 150px;
+    padding-left: 150px;
+}
+
+
+p, label {
+    font-family: "Saira Semi Condensed", sans-serif;
+    color: black;
+    font-size: 20px;
+}
+
+
+#welcome {
+    text-shadow: 0 0 3px red;
+    color: yellow;
+}
+
+
+/*Browse page headings*/
+.genre, .measure
+{
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+    text-align: left;
+    color: #F23838
+}
+
+
+/*Spacing*/
+div {
+    padding-right: 150px;
+    padding-left: 150px;
+}
+
+
+/*Select page text*/
+.result {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
+
+#announcement {
+    font-family: "Chakra Petch", sans-serif;
+    color: yellow;
+    font-weight: 700;
+    font-size: 25px;
+    text-shadow: 0 0 3px orange;
+}
+
+/*Form in rate.html*/
+.input {
+    font-size: 25px;
+    color: black;
+    margin: 25px;
+}
+
+
+#feedback, #user {
+    padding: 12px, 20px;
+    transition: width 0.4s ease-in-out;
+    width: 200px;
+}
+
+
+#feedback:focus {
+    width: 500px;
+    height: 200px;
+}
+
+
+#user:focus {
+    width: 500px;
+}
+
+
+/*Buttons*/
+button {
+    background-color: #F28705;
+    transition-duration: 0.4s;
+    border-radius: 6px;
+    border-style: inset;
+    border-color: #F2DA63;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+    color: #F2DA63;
+    padding: 0.375rem 0.75rem;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 30px;
+}
+
+#winner {
+    font-size: 24px;
+}
+
+button:hover {
+    background-color: #F2DA63;
+    color: #F28705;
+}
+
+
+/*Table design*/
+table, td {
+    color: black;
+    background-color: #F2B705;
+    font-family: "Saira Semi Condensed", sans-serif;
+    text-align: center;
+    border: 1px;
+    border-color: #F27405;
+}
+
+
+thead {
+    background-color: #F2B705;
+    color: #F27405;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    border: 1px;
+    border-color: #F27405;
+}
+
+tr:nth-child(even) {background-color: #F2DA63;}
+
+
+
+
+
+

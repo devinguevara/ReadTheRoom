@@ -1,0 +1,140 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<script>
+    // Create function to count number of votes for each of 4 songs
+    // used inspo from a stackoverflow comment that showed how to display number of clicks: https://stackoverflow.com/questions/24075219/javascript-code-to-count-number-of-clicks-on-a-button
+    document.addEventListener("DOMContentLoaded", function ()
+    {
+
+    // Set vote counters
+    let count1 = 0;
+    let count2 = 0;
+    let count3 = 0;
+    let count4 = 0;
+
+    // Declare variables for each button
+    let button1 = document.getElementById("song1");
+    let button2 = document.getElementById("song2");
+    let button3 = document.getElementById("song3");
+    let button4 = document.getElementById("song4");
+
+    // Declare variable for "win" button
+    let win = document.getElementById("winner");
+
+    // Increase counter for button 1 if button is clicked
+    let divSection1 = document.getElementById("showCount1");
+    button1.addEventListener("click", function()
+    {
+        count1++;
+        divSection1.innerHTML=`Number of Votes for this song are : ${count1}`;
+    });
+
+    // Increase counter for button 2 if button is clicked
+    let divSection2 = document.getElementById("showCount2");
+    button2.addEventListener("click", function()
+    {
+        count2++;
+        divSection2.innerHTML=`Number of Votes for this song are : ${count2}`;
+     });
+
+    // Increase counter for button 3 if button is clicked
+    let divSection3 = document.getElementById("showCount3");
+    button3.addEventListener("click", function()
+    {
+        count3++;
+        divSection3.innerHTML=`Number of Votes for this song are : ${count3}`;
+     });
+
+    // Increase counter for button 4 if button is clicked
+    let divSection4 = document.getElementById("showCount4");
+    button4.addEventListener("click", function()
+    {
+        count4++;
+        divSection4.innerHTML=`Number of Votes for this song are : ${count4}`;
+     });
+
+
+    // Display song with greatest number of votes when button "win" is clicked
+    // If two songs are tied, the first one in the database will be listed first
+    let announcement = document.getElementById("announcement");
+    win.addEventListener("click", function()
+    {
+      maxnum = Math.max(count1, count2, count3, count4);
+
+      if (maxnum == count1)
+      {
+          announcement.innerHTML =  "Song 1 wins!";
+      }
+      else if (maxnum == count2)
+      {
+          announcement.innerHTML =  "Song 2 wins!";
+      }
+      else if (maxnum == count3)
+      {
+          announcement.innerHTML =  "Song 3 wins!";
+      }
+      else if (maxnum == count4)
+      {
+          announcement.innerHTML =  "Song 4 wins!";
+      }
+
+    });
+})
+    </script>
+
+
+    <h2>Select Music</h2>
+    <h3>Select your preferred song from the options below:</h3>
+
+    <!-- Display 4 randomly selected songs from songs.db -->
+    <div class="music">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Artist</th>
+                    <th>Song</th>
+                    <th>Danceability</th>
+                    <th>Energy</th>
+                    <th>Genre</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for song in songs %}
+                <tr>
+                    <td>{{ song.artist }}</td>
+                    <td>{{ song.song }}</td>
+                    <td>{{ song.danceability }}</td>
+                    <td>{{ song.energy }}</td>
+                    <td>{{ song.genre }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+        <!-- Display vote buttons for each song and a "call vote" button -->
+        <button id="song1">Song 1 </button>
+        <div class="result" id="showCount1"></div>
+
+        <br>
+
+        <button id="song2"> Song 2 </button>
+        <div class="result" id="showCount2"></div>
+
+        <br>
+
+        <button id="song3"> Song 3 </button>
+        <div class="result" id="showCount3"></div>
+
+        <br>
+
+        <button id ="song4"> Song 4 </button>
+        <div class="result" id="showCount4"></div>
+
+        <br>
+
+        <button id="winner">Call vote</button>
+        <div id="announcement"></div>
+
+{% endblock %}
